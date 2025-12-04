@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4d4e222ffb9a192d131d4d2b394db3e8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+            bottom: 50px;
+            left: 50px;
+            width: 260px;
+            height: auto;
+            background-color: white;
+            border:2px solid grey;
+            z-index:9999;
+            font-size:11px;
+            padding: 8px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+            ">
+<h4 style="margin-top:0; margin-bottom:8px; text-align:center; font-weight:bold; font-size:13px;">Distributor Assignment (REASSIGNED)</h4>
+<div style="max-height: 350px; overflow-y: auto;">
+
+    <div style="margin-bottom: 6px; padding: 4px; background-color: #f9f9f9; border-radius: 3px; display: flex; align-items: center;">
+        <div style="background-color:purple; width:16px; height:16px; border:1px solid black; margin-right:6px; border-radius:2px; flex-shrink: 0;"></div>
+        <div style="flex:1; font-size:10px;">
+            <div style="font-weight:bold; margin-bottom:2px;" title="BERHASIL INDONESIA GEMILANG, PT">BERHASIL INDONESIA GEMILANG,...</div>
+            <div style="color: #555;">📍 13 kec | 📦 9433.595 ton (total)</div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: 6px; padding: 4px; background-color: #f9f9f9; border-radius: 3px; display: flex; align-items: center;">
+        <div style="background-color:orange; width:16px; height:16px; border:1px solid black; margin-right:6px; border-radius:2px; flex-shrink: 0;"></div>
+        <div style="flex:1; font-size:10px;">
+            <div style="font-weight:bold; margin-bottom:2px;" title="BUMI PEMBANGUNAN PERTIWI, PT">BUMI PEMBANGUNAN PERTIWI, PT</div>
+            <div style="color: #555;">📍 11 kec | 📦 1656.8599999999997 ton (total)</div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: 6px; padding: 4px; background-color: #f9f9f9; border-radius: 3px; display: flex; align-items: center;">
+        <div style="background-color:blue; width:16px; height:16px; border:1px solid black; margin-right:6px; border-radius:2px; flex-shrink: 0;"></div>
+        <div style="flex:1; font-size:10px;">
+            <div style="font-weight:bold; margin-bottom:2px;" title="SEMEN INDONESIA DISTRIBUTOR (JATIM), PT">SEMEN INDONESIA DISTRIBUTOR ...</div>
+            <div style="color: #555;">📍 2 kec | 📦 579.255 ton (total)</div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: 6px; padding: 4px; background-color: #f9f9f9; border-radius: 3px; display: flex; align-items: center;">
+        <div style="background-color:green; width:16px; height:16px; border:1px solid black; margin-right:6px; border-radius:2px; flex-shrink: 0;"></div>
+        <div style="flex:1; font-size:10px;">
+            <div style="font-weight:bold; margin-bottom:2px;" title="SUMBER INTI ALAM, PT">SUMBER INTI ALAM, PT</div>
+            <div style="color: #555;">📍 5 kec | 📦 406.45 ton (total)</div>
+        </div>
+    </div>
+    
+</div>
+<div style="margin-top:8px; padding-top:6px; border-top:1px solid #ddd; font-size:10px; color:#333;">
+    <b>4</b> distributors | <b>31</b> kecamatans | <b>12076.159999999998</b> ton
+    <div style="margin-top:4px; font-size:9px; color:#666; font-style:italic;">
+        Note: Total volumes include NULL kecamatan sales
+    </div>
+</div>
+</div>
+    
+            <div class="folium-map" id="map_4d4e222ffb9a192d131d4d2b394db3e8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4d4e222ffb9a192d131d4d2b394db3e8 = L.map(
+                "map_4d4e222ffb9a192d131d4d2b394db3e8",
+                {
+                    center: [-7.274440485033569, 112.72772623501069],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_53dd74e816f9ae155ee4128e0d21e4aa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_53dd74e816f9ae155ee4128e0d21e4aa.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_ff33fe30af858f3640f94b66ff5bd308_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_ff33fe30af858f3640f94b66ff5bd308_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_ff33fe30af858f3640f94b66ff5bd308 = L.geoJson(null, {
+                onEachFeature: geo_json_ff33fe30af858f3640f94b66ff5bd308_onEachFeature,
+            
+                style: geo_json_ff33fe30af858f3640f94b66ff5bd308_styler,
+            ...{
+}
+        });
+
+        function geo_json_ff33fe30af858f3640f94b66ff5bd308_add (data) {
+            geo_json_ff33fe30af858f3640f94b66ff5bd308
+                .addData(data);
+        }
+            geo_json_ff33fe30af858f3640f94b66ff5bd308_add({"features": [{"geometry": {"coordinates": [[[[112.7177, -7.2453], [112.7147, -7.2563], [112.711, -7.2522], [112.7022, -7.255], [112.7001, -7.2504], [112.7014, -7.2489], [112.6983, -7.2495], [112.6979, -7.2514], [112.6952, -7.2479], [112.6956, -7.2495], [112.692, -7.2527], [112.6863, -7.2531], [112.6861, -7.2572], [112.6846, -7.2569], [112.6813, -7.2556], [112.6822, -7.2499], [112.6769, -7.249], [112.6778, -7.2462], [112.6739, -7.245], [112.6755, -7.2378], [112.6716, -7.2373], [112.6697, -7.2419], [112.6666, -7.2424], [112.6652, -7.2396], [112.6607, -7.2376], [112.6604, -7.236], [112.6628, -7.2346], [112.6612, -7.2289], [112.6638, -7.2274], [112.6641, -7.2224], [112.6664, -7.2225], [112.6684, -7.2201], [112.6711, -7.2225], [112.6766, -7.2239], [112.6779, -7.2202], [112.6802, -7.2215], [112.6804, -7.2234], [112.6858, -7.2255], [112.6884, -7.2234], [112.6944, -7.2236], [112.7048, -7.2207], [112.7072, -7.2304], [112.7103, -7.2321], [112.708, -7.2363], [112.7111, -7.2359], [112.7112, -7.2379], [112.7091, -7.2376], [112.71, -7.2398], [112.7128, -7.2409], [112.7137, -7.2397], [112.7139, -7.243], [112.7169, -7.2428], [112.7177, -7.2453]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578270", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.1_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Asemrowo", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ff33fe30af858f3640f94b66ff5bd308.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Asemrowo<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 520.46
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_ff33fe30af858f3640f94b66ff5bd308.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "green", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4 = L.geoJson(null, {
+                onEachFeature: geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4_onEachFeature,
+            
+                style: geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4_styler,
+            ...{
+}
+        });
+
+        function geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4_add (data) {
+            geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4
+                .addData(data);
+        }
+            geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4_add({"features": [{"geometry": {"coordinates": [[[[112.6374, -7.2219], [112.6355, -7.2207], [112.6339, -7.2229], [112.6272, -7.2226], [112.628, -7.2127], [112.6256, -7.2114], [112.6257, -7.2033], [112.6348, -7.1996], [112.6592, -7.1964], [112.6603, -7.1938], [112.6631, -7.1932], [112.6638, -7.1988], [112.6611, -7.2004], [112.66, -7.2077], [112.6622, -7.2087], [112.6684, -7.2201], [112.6664, -7.2225], [112.6641, -7.2224], [112.6638, -7.2274], [112.6612, -7.2289], [112.6629, -7.2319], [112.6624, -7.2358], [112.6604, -7.2359], [112.6592, -7.2391], [112.6575, -7.2388], [112.6545, -7.2418], [112.6544, -7.2547], [112.66, -7.2562], [112.6596, -7.2625], [112.6566, -7.263], [112.6547, -7.2656], [112.6515, -7.264], [112.6522, -7.2577], [112.6464, -7.2576], [112.6444, -7.26], [112.6398, -7.2592], [112.6362, -7.2646], [112.6328, -7.264], [112.6305, -7.2537], [112.6343, -7.2446], [112.6318, -7.2432], [112.6335, -7.2394], [112.6346, -7.2399], [112.6356, -7.2355], [112.6343, -7.2349], [112.6344, -7.2275], [112.6374, -7.2219]]], [[[112.6644, -7.1962], [112.6636, -7.1931], [112.665, -7.1923], [112.6662, -7.1962], [112.6644, -7.1962]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578280", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.2_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Benowo", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Benowo<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 154.645
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_e97eb8cc5636602f96ad7b75cd57bdcb_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_e97eb8cc5636602f96ad7b75cd57bdcb_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_e97eb8cc5636602f96ad7b75cd57bdcb = L.geoJson(null, {
+                onEachFeature: geo_json_e97eb8cc5636602f96ad7b75cd57bdcb_onEachFeature,
+            
+                style: geo_json_e97eb8cc5636602f96ad7b75cd57bdcb_styler,
+            ...{
+}
+        });
+
+        function geo_json_e97eb8cc5636602f96ad7b75cd57bdcb_add (data) {
+            geo_json_e97eb8cc5636602f96ad7b75cd57bdcb
+                .addData(data);
+        }
+            geo_json_e97eb8cc5636602f96ad7b75cd57bdcb_add({"features": [{"geometry": {"coordinates": [[[[112.7337, -7.256], [112.7261, -7.2558], [112.7252, -7.2571], [112.7151, -7.2551], [112.7171, -7.2471], [112.7209, -7.2471], [112.7206, -7.2361], [112.7264, -7.2378], [112.7269, -7.241], [112.729, -7.243], [112.7382, -7.2451], [112.7429, -7.2444], [112.7417, -7.2487], [112.7372, -7.2525], [112.7381, -7.2555], [112.7427, -7.2559], [112.7337, -7.256]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578250", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.3_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Bubutan", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_e97eb8cc5636602f96ad7b75cd57bdcb.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Bubutan<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 72.405
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_e97eb8cc5636602f96ad7b75cd57bdcb.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_d0f605a2daf262e89cf2b77f7d9833a7_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_d0f605a2daf262e89cf2b77f7d9833a7_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_d0f605a2daf262e89cf2b77f7d9833a7 = L.geoJson(null, {
+                onEachFeature: geo_json_d0f605a2daf262e89cf2b77f7d9833a7_onEachFeature,
+            
+                style: geo_json_d0f605a2daf262e89cf2b77f7d9833a7_styler,
+            ...{
+}
+        });
+
+        function geo_json_d0f605a2daf262e89cf2b77f7d9833a7_add (data) {
+            geo_json_d0f605a2daf262e89cf2b77f7d9833a7
+                .addData(data);
+        }
+            geo_json_d0f605a2daf262e89cf2b77f7d9833a7_add({"features": [{"geometry": {"coordinates": [[[[112.7914, -7.2512], [112.7926, -7.2512], [112.7928, -7.2483], [112.7828, -7.2473], [112.784, -7.2351], [112.7804, -7.2357], [112.7795, -7.233], [112.7779, -7.233], [112.7752, -7.2368], [112.7706, -7.2357], [112.7713, -7.233], [112.7749, -7.2322], [112.7775, -7.2288], [112.781, -7.2288], [112.7812, -7.2306], [112.7837, -7.2315], [112.7842, -7.228], [112.7827, -7.227], [112.7839, -7.2253], [112.7862, -7.2261], [112.7869, -7.2234], [112.7841, -7.2229], [112.7841, -7.2216], [112.787, -7.2212], [112.784, -7.216], [112.7874, -7.2193], [112.7887, -7.2258], [112.7914, -7.227], [112.7972, -7.236], [112.7976, -7.2404], [112.7999, -7.2427], [112.8014, -7.2423], [112.8041, -7.2519], [112.807, -7.2522], [112.8065, -7.2557], [112.7914, -7.2512]]], [[[112.7787, -7.2194], [112.7771, -7.2189], [112.7787, -7.2134], [112.7801, -7.2136], [112.7787, -7.2194]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578211", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.4_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Bulak", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_d0f605a2daf262e89cf2b77f7d9833a7.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Bulak<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 247.35
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_d0f605a2daf262e89cf2b77f7d9833a7.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_4b05e81bb350d65b89a7b375790be744_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_4b05e81bb350d65b89a7b375790be744_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_4b05e81bb350d65b89a7b375790be744 = L.geoJson(null, {
+                onEachFeature: geo_json_4b05e81bb350d65b89a7b375790be744_onEachFeature,
+            
+                style: geo_json_4b05e81bb350d65b89a7b375790be744_styler,
+            ...{
+}
+        });
+
+        function geo_json_4b05e81bb350d65b89a7b375790be744_add (data) {
+            geo_json_4b05e81bb350d65b89a7b375790be744
+                .addData(data);
+        }
+            geo_json_4b05e81bb350d65b89a7b375790be744_add({"features": [{"geometry": {"coordinates": [[[[112.7188, -7.2917], [112.725, -7.2922], [112.7208, -7.2965], [112.7195, -7.3069], [112.7208, -7.308], [112.7038, -7.3073], [112.7043, -7.3038], [112.7077, -7.3035], [112.7051, -7.3001], [112.7025, -7.3021], [112.6971, -7.3016], [112.6969, -7.3], [112.6962, -7.3012], [112.6881, -7.2994], [112.6865, -7.3013], [112.683, -7.3016], [112.6841, -7.2989], [112.6757, -7.2941], [112.6786, -7.2876], [112.6784, -7.2814], [112.6841, -7.2769], [112.6845, -7.275], [112.6871, -7.2791], [112.6899, -7.2778], [112.6954, -7.2785], [112.6972, -7.2807], [112.6944, -7.2843], [112.6967, -7.2855], [112.6949, -7.2864], [112.6941, -7.2897], [112.7034, -7.2931], [112.7056, -7.2895], [112.7069, -7.2897], [112.7081, -7.2838], [112.7044, -7.2828], [112.7023, -7.2846], [112.6995, -7.2821], [112.7049, -7.2772], [112.708, -7.2791], [112.7079, -7.2759], [112.7101, -7.2757], [112.7096, -7.2776], [112.7174, -7.2795], [112.7134, -7.2903], [112.7188, -7.2917]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578120", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.5_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "DukuhPakis", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_4b05e81bb350d65b89a7b375790be744.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> DukuhPakis<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 352.25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_4b05e81bb350d65b89a7b375790be744.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_10fca50a232b7e0653078b7b284b0f3f_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "green", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_10fca50a232b7e0653078b7b284b0f3f_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_10fca50a232b7e0653078b7b284b0f3f = L.geoJson(null, {
+                onEachFeature: geo_json_10fca50a232b7e0653078b7b284b0f3f_onEachFeature,
+            
+                style: geo_json_10fca50a232b7e0653078b7b284b0f3f_styler,
+            ...{
+}
+        });
+
+        function geo_json_10fca50a232b7e0653078b7b284b0f3f_add (data) {
+            geo_json_10fca50a232b7e0653078b7b284b0f3f
+                .addData(data);
+        }
+            geo_json_10fca50a232b7e0653078b7b284b0f3f_add({"features": [{"geometry": {"coordinates": [[[[112.7157, -7.3414], [112.7178, -7.3386], [112.7164, -7.3383], [112.7168, -7.3353], [112.7188, -7.3357], [112.7197, -7.3288], [112.718, -7.3285], [112.7265, -7.3179], [112.7222, -7.3163], [112.7233, -7.3077], [112.7353, -7.3106], [112.7293, -7.3395], [112.7378, -7.3405], [112.7378, -7.3449], [112.7334, -7.3466], [112.7332, -7.3481], [112.7258, -7.3483], [112.7242, -7.3459], [112.7157, -7.3414]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578030", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.6_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Gayungan", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_10fca50a232b7e0653078b7b284b0f3f.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Gayungan<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 3.35
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_10fca50a232b7e0653078b7b284b0f3f.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_8879aa929fa26f3539217144dad1f20c_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "green", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_8879aa929fa26f3539217144dad1f20c_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_8879aa929fa26f3539217144dad1f20c = L.geoJson(null, {
+                onEachFeature: geo_json_8879aa929fa26f3539217144dad1f20c_onEachFeature,
+            
+                style: geo_json_8879aa929fa26f3539217144dad1f20c_styler,
+            ...{
+}
+        });
+
+        function geo_json_8879aa929fa26f3539217144dad1f20c_add (data) {
+            geo_json_8879aa929fa26f3539217144dad1f20c
+                .addData(data);
+        }
+            geo_json_8879aa929fa26f3539217144dad1f20c_add({"features": [{"geometry": {"coordinates": [[[[112.7498, -7.2678], [112.7439, -7.2743], [112.7423, -7.2733], [112.7413, -7.2773], [112.7378, -7.2765], [112.7384, -7.2739], [112.7406, -7.2732], [112.7383, -7.2709], [112.7389, -7.2686], [112.7414, -7.269], [112.7409, -7.2629], [112.7332, -7.2584], [112.7343, -7.2559], [112.7426, -7.256], [112.7381, -7.2555], [112.7373, -7.2521], [112.7422, -7.2477], [112.7468, -7.2483], [112.7473, -7.2435], [112.7517, -7.2446], [112.7533, -7.2477], [112.7531, -7.2514], [112.7497, -7.2514], [112.7505, -7.256], [112.7528, -7.2561], [112.7522, -7.2642], [112.751, -7.268], [112.7498, -7.2678]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578190", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.7_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Genteng", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_8879aa929fa26f3539217144dad1f20c.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Genteng<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 0
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_8879aa929fa26f3539217144dad1f20c.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_b0462e8d44c449c1a37106fb1f07ce04_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_b0462e8d44c449c1a37106fb1f07ce04_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_b0462e8d44c449c1a37106fb1f07ce04 = L.geoJson(null, {
+                onEachFeature: geo_json_b0462e8d44c449c1a37106fb1f07ce04_onEachFeature,
+            
+                style: geo_json_b0462e8d44c449c1a37106fb1f07ce04_styler,
+            ...{
+}
+        });
+
+        function geo_json_b0462e8d44c449c1a37106fb1f07ce04_add (data) {
+            geo_json_b0462e8d44c449c1a37106fb1f07ce04
+                .addData(data);
+        }
+            geo_json_b0462e8d44c449c1a37106fb1f07ce04_add({"features": [{"geometry": {"coordinates": [[[[112.7632, -7.2875], [112.7619, -7.3062], [112.7544, -7.3042], [112.7571, -7.2936], [112.7472, -7.2911], [112.7503, -7.2773], [112.7441, -7.2772], [112.7445, -7.2731], [112.75, -7.2676], [112.7547, -7.269], [112.7565, -7.2656], [112.7626, -7.2659], [112.7642, -7.2628], [112.7763, -7.2641], [112.7777, -7.2663], [112.7759, -7.2662], [112.7741, -7.2685], [112.772, -7.2804], [112.7644, -7.2796], [112.7647, -7.2774], [112.7622, -7.2772], [112.7632, -7.2875]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578100", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.8_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Gubeng", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_b0462e8d44c449c1a37106fb1f07ce04.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Gubeng<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 883.8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_b0462e8d44c449c1a37106fb1f07ce04.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_f9815648e3b7a4163a083b030a7d49fc_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_f9815648e3b7a4163a083b030a7d49fc_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_f9815648e3b7a4163a083b030a7d49fc = L.geoJson(null, {
+                onEachFeature: geo_json_f9815648e3b7a4163a083b030a7d49fc_onEachFeature,
+            
+                style: geo_json_f9815648e3b7a4163a083b030a7d49fc_styler,
+            ...{
+}
+        });
+
+        function geo_json_f9815648e3b7a4163a083b030a7d49fc_add (data) {
+            geo_json_f9815648e3b7a4163a083b030a7d49fc
+                .addData(data);
+        }
+            geo_json_f9815648e3b7a4163a083b030a7d49fc_add({"features": [{"geometry": {"coordinates": [[[[112.7971, -7.3453], [112.7957, -7.3465], [112.789, -7.344], [112.7845, -7.3455], [112.7798, -7.3448], [112.7775, -7.341], [112.7701, -7.3392], [112.7673, -7.3416], [112.7665, -7.3383], [112.7547, -7.3363], [112.7575, -7.3303], [112.7948, -7.3334], [112.8223, -7.3303], [112.8259, -7.331], [112.827, -7.3329], [112.8253, -7.3391], [112.8259, -7.3432], [112.8188, -7.3435], [112.8129, -7.3463], [112.7971, -7.3453]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578060", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.9_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "GunungAnyar", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_f9815648e3b7a4163a083b030a7d49fc.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> GunungAnyar<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 1375.35
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_f9815648e3b7a4163a083b030a7d49fc.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_3957e50e6d0e19d88110259afee3a117_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_3957e50e6d0e19d88110259afee3a117_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_3957e50e6d0e19d88110259afee3a117 = L.geoJson(null, {
+                onEachFeature: geo_json_3957e50e6d0e19d88110259afee3a117_onEachFeature,
+            
+                style: geo_json_3957e50e6d0e19d88110259afee3a117_styler,
+            ...{
+}
+        });
+
+        function geo_json_3957e50e6d0e19d88110259afee3a117_add (data) {
+            geo_json_3957e50e6d0e19d88110259afee3a117
+                .addData(data);
+        }
+            geo_json_3957e50e6d0e19d88110259afee3a117_add({"features": [{"geometry": {"coordinates": [[[[112.7151, -7.3396], [112.7047, -7.3361], [112.7105, -7.3286], [112.7122, -7.3091], [112.7148, -7.3076], [112.7233, -7.3077], [112.7222, -7.3163], [112.7265, -7.3179], [112.718, -7.3285], [112.7197, -7.3288], [112.7188, -7.3357], [112.7168, -7.3353], [112.7174, -7.3404], [112.7151, -7.3396]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578020", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.10_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Jambangan", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_3957e50e6d0e19d88110259afee3a117.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Jambangan<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 702.64
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_3957e50e6d0e19d88110259afee3a117.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321 = L.geoJson(null, {
+                onEachFeature: geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321_onEachFeature,
+            
+                style: geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321_styler,
+            ...{
+}
+        });
+
+        function geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321_add (data) {
+            geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321
+                .addData(data);
+        }
+            geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321_add({"features": [{"geometry": {"coordinates": [[[[112.6698, -7.3512], [112.6646, -7.3514], [112.6653, -7.3404], [112.6615, -7.3372], [112.6617, -7.3348], [112.6651, -7.336], [112.6681, -7.335], [112.6713, -7.3366], [112.6716, -7.3342], [112.6795, -7.3339], [112.6845, -7.3316], [112.6955, -7.3344], [112.6953, -7.3264], [112.6903, -7.3243], [112.6908, -7.3224], [112.6976, -7.3238], [112.7017, -7.3153], [112.7048, -7.3131], [112.7113, -7.3127], [112.7105, -7.3286], [112.7038, -7.3371], [112.6917, -7.3449], [112.6765, -7.351], [112.6698, -7.3512]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578010", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.11_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "KarangPilang", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> KarangPilang<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 39.18
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_fa5522a856cf33cc4fccad07e454e1c0_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_fa5522a856cf33cc4fccad07e454e1c0_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_fa5522a856cf33cc4fccad07e454e1c0 = L.geoJson(null, {
+                onEachFeature: geo_json_fa5522a856cf33cc4fccad07e454e1c0_onEachFeature,
+            
+                style: geo_json_fa5522a856cf33cc4fccad07e454e1c0_styler,
+            ...{
+}
+        });
+
+        function geo_json_fa5522a856cf33cc4fccad07e454e1c0_add (data) {
+            geo_json_fa5522a856cf33cc4fccad07e454e1c0
+                .addData(data);
+        }
+            geo_json_fa5522a856cf33cc4fccad07e454e1c0_add({"features": [{"geometry": {"coordinates": [[[[112.7857, -7.2257], [112.7839, -7.2253], [112.7827, -7.227], [112.7842, -7.228], [112.7837, -7.2315], [112.7812, -7.2306], [112.781, -7.2288], [112.7775, -7.2288], [112.7749, -7.2322], [112.7713, -7.233], [112.7706, -7.2357], [112.7678, -7.2367], [112.7637, -7.2363], [112.7625, -7.2345], [112.7577, -7.2353], [112.7571, -7.2301], [112.7587, -7.2276], [112.7581, -7.2243], [112.7606, -7.2236], [112.7592, -7.2221], [112.7621, -7.2083], [112.758, -7.2035], [112.7573, -7.1973], [112.7604, -7.1958], [112.7648, -7.1963], [112.7748, -7.203], [112.7753, -7.2074], [112.78, -7.2087], [112.7771, -7.2189], [112.7869, -7.2234], [112.7857, -7.2257]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578210", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.12_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Kenjeran", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_fa5522a856cf33cc4fccad07e454e1c0.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Kenjeran<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 239.67
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_fa5522a856cf33cc4fccad07e454e1c0.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3 = L.geoJson(null, {
+                onEachFeature: geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3_onEachFeature,
+            
+                style: geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3_styler,
+            ...{
+}
+        });
+
+        function geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3_add (data) {
+            geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3
+                .addData(data);
+        }
+            geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3_add({"features": [{"geometry": {"coordinates": [[[[112.7422, -7.2441], [112.7382, -7.2451], [112.7293, -7.2431], [112.7269, -7.241], [112.7264, -7.2378], [112.7206, -7.2361], [112.7209, -7.2471], [112.7171, -7.2471], [112.7169, -7.2428], [112.7139, -7.243], [112.7137, -7.2397], [112.7128, -7.2409], [112.7098, -7.2395], [112.7091, -7.2376], [112.7112, -7.2379], [112.7112, -7.2362], [112.708, -7.2363], [112.7103, -7.2321], [112.7072, -7.2304], [112.7066, -7.2233], [112.7114, -7.2219], [112.7102, -7.2175], [112.7149, -7.2156], [112.7151, -7.21], [112.7176, -7.2097], [112.7187, -7.2071], [112.7219, -7.2118], [112.7236, -7.2113], [112.7265, -7.2169], [112.7311, -7.2213], [112.7325, -7.2206], [112.7287, -7.2327], [112.7307, -7.2344], [112.7309, -7.2324], [112.7353, -7.234], [112.7348, -7.2307], [112.7382, -7.2316], [112.7379, -7.2389], [112.7396, -7.2431], [112.7422, -7.2441]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578260", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.13_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Krembangan", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Krembangan<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 282.84
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_5d92bc31724d62f716d9be8e01bc62d2_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_5d92bc31724d62f716d9be8e01bc62d2_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_5d92bc31724d62f716d9be8e01bc62d2 = L.geoJson(null, {
+                onEachFeature: geo_json_5d92bc31724d62f716d9be8e01bc62d2_onEachFeature,
+            
+                style: geo_json_5d92bc31724d62f716d9be8e01bc62d2_styler,
+            ...{
+}
+        });
+
+        function geo_json_5d92bc31724d62f716d9be8e01bc62d2_add (data) {
+            geo_json_5d92bc31724d62f716d9be8e01bc62d2
+                .addData(data);
+        }
+            geo_json_5d92bc31724d62f716d9be8e01bc62d2_add({"features": [{"geometry": {"coordinates": [[[[112.6551, -7.3569], [112.6558, -7.3426], [112.6538, -7.339], [112.6485, -7.3353], [112.6509, -7.3215], [112.6483, -7.319], [112.6494, -7.3146], [112.637, -7.3131], [112.6366, -7.3115], [112.6294, -7.3116], [112.6287, -7.3013], [112.6262, -7.3001], [112.6292, -7.2893], [112.6477, -7.2885], [112.6484, -7.2915], [112.6559, -7.2896], [112.6756, -7.2943], [112.674, -7.3095], [112.6716, -7.3172], [112.6792, -7.3194], [112.6793, -7.3288], [112.6763, -7.3303], [112.6746, -7.3347], [112.6716, -7.3342], [112.6713, -7.3366], [112.6681, -7.335], [112.6651, -7.336], [112.6617, -7.3348], [112.6615, -7.3372], [112.6653, -7.3404], [112.6646, -7.3514], [112.6624, -7.3513], [112.6551, -7.3569]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578140", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.14_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Lakarsantri", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_5d92bc31724d62f716d9be8e01bc62d2.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Lakarsantri<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 761.78
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_5d92bc31724d62f716d9be8e01bc62d2.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_afdc23cca68f0e8721179eaeb5480862_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "green", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_afdc23cca68f0e8721179eaeb5480862_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_afdc23cca68f0e8721179eaeb5480862 = L.geoJson(null, {
+                onEachFeature: geo_json_afdc23cca68f0e8721179eaeb5480862_onEachFeature,
+            
+                style: geo_json_afdc23cca68f0e8721179eaeb5480862_styler,
+            ...{
+}
+        });
+
+        function geo_json_afdc23cca68f0e8721179eaeb5480862_add (data) {
+            geo_json_afdc23cca68f0e8721179eaeb5480862
+                .addData(data);
+        }
+            geo_json_afdc23cca68f0e8721179eaeb5480862_add({"features": [{"geometry": {"coordinates": [[[[112.7715, -7.2853], [112.7737, -7.2853], [112.7724, -7.2893], [112.7708, -7.2894], [112.7715, -7.2853]]], [[[112.7622, -7.2788], [112.7622, -7.2772], [112.7647, -7.2774], [112.7644, -7.2796], [112.772, -7.2804], [112.7741, -7.2685], [112.7759, -7.2662], [112.7777, -7.2663], [112.7763, -7.2644], [112.7782, -7.2632], [112.7739, -7.2625], [112.7771, -7.2551], [112.7809, -7.2548], [112.7822, -7.2533], [112.7802, -7.2525], [112.7836, -7.2489], [112.7887, -7.2502], [112.7893, -7.2478], [112.7928, -7.2483], [112.7926, -7.2512], [112.7914, -7.2512], [112.7926, -7.2521], [112.8045, -7.2555], [112.81, -7.2544], [112.8108, -7.2572], [112.8145, -7.2583], [112.8162, -7.2573], [112.8281, -7.2632], [112.8316, -7.2615], [112.8363, -7.2673], [112.8181, -7.2723], [112.8117, -7.2809], [112.8038, -7.2851], [112.8005, -7.2845], [112.8011, -7.28], [112.7994, -7.2743], [112.7982, -7.2744], [112.7839, -7.2769], [112.7844, -7.2801], [112.7857, -7.28], [112.7852, -7.2842], [112.7818, -7.2845], [112.7814, -7.282], [112.7705, -7.2811], [112.7684, -7.2851], [112.7654, -7.2849], [112.7637, -7.2893], [112.7622, -7.2788]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578090", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.15_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Mulyorejo", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_afdc23cca68f0e8721179eaeb5480862.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Mulyorejo<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 107.88
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_afdc23cca68f0e8721179eaeb5480862.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_76cbe0813c196e229eef78401dd012a7_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_76cbe0813c196e229eef78401dd012a7_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_76cbe0813c196e229eef78401dd012a7 = L.geoJson(null, {
+                onEachFeature: geo_json_76cbe0813c196e229eef78401dd012a7_onEachFeature,
+            
+                style: geo_json_76cbe0813c196e229eef78401dd012a7_styler,
+            ...{
+}
+        });
+
+        function geo_json_76cbe0813c196e229eef78401dd012a7_add (data) {
+            geo_json_76cbe0813c196e229eef78401dd012a7
+                .addData(data);
+        }
+            geo_json_76cbe0813c196e229eef78401dd012a7_add({"features": [{"geometry": {"coordinates": [[[[112.7423, -7.2475], [112.7429, -7.2444], [112.7396, -7.2431], [112.7378, -7.2388], [112.7383, -7.2316], [112.7348, -7.2307], [112.7353, -7.234], [112.7309, -7.2324], [112.7307, -7.2344], [112.7285, -7.2324], [112.7325, -7.2206], [112.7311, -7.2213], [112.7262, -7.2167], [112.7236, -7.2113], [112.7219, -7.2118], [112.7218, -7.2082], [112.7201, -7.2074], [112.7174, -7.1991], [112.7201, -7.1984], [112.7257, -7.2098], [112.7271, -7.2094], [112.7245, -7.2033], [112.7256, -7.2028], [112.7286, -7.2091], [112.7305, -7.2088], [112.7298, -7.2071], [112.7327, -7.2066], [112.7327, -7.2035], [112.7321, -7.2014], [112.7306, -7.2012], [112.7315, -7.1985], [112.7243, -7.1999], [112.7236, -7.198], [112.7349, -7.1961], [112.7375, -7.2094], [112.7381, -7.2238], [112.741, -7.2253], [112.7411, -7.2335], [112.7429, -7.2343], [112.7473, -7.2434], [112.7468, -7.2483], [112.7423, -7.2475]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578240", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.16_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "PabeanCantian", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_76cbe0813c196e229eef78401dd012a7.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> PabeanCantian<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 77.165
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_76cbe0813c196e229eef78401dd012a7.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_7f8e323b97de06b2be09ae41c725e965_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "blue", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_7f8e323b97de06b2be09ae41c725e965_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_7f8e323b97de06b2be09ae41c725e965 = L.geoJson(null, {
+                onEachFeature: geo_json_7f8e323b97de06b2be09ae41c725e965_onEachFeature,
+            
+                style: geo_json_7f8e323b97de06b2be09ae41c725e965_styler,
+            ...{
+}
+        });
+
+        function geo_json_7f8e323b97de06b2be09ae41c725e965_add (data) {
+            geo_json_7f8e323b97de06b2be09ae41c725e965
+                .addData(data);
+        }
+            geo_json_7f8e323b97de06b2be09ae41c725e965_add({"features": [{"geometry": {"coordinates": [[[[112.6198, -7.2582], [112.6172, -7.2575], [112.6179, -7.2527], [112.6142, -7.2524], [112.6146, -7.2482], [112.6065, -7.2486], [112.602, -7.2465], [112.6061, -7.2422], [112.6065, -7.2395], [112.6039, -7.2372], [112.6046, -7.2328], [112.5978, -7.2284], [112.5988, -7.2272], [112.5971, -7.2236], [112.5916, -7.2232], [112.5933, -7.2155], [112.5973, -7.222], [112.5977, -7.2191], [112.6007, -7.2168], [112.5947, -7.2147], [112.5984, -7.2125], [112.5923, -7.2071], [112.5927, -7.2023], [112.5992, -7.2032], [112.6134, -7.209], [112.6257, -7.2033], [112.6256, -7.2114], [112.628, -7.2127], [112.6272, -7.2226], [112.6339, -7.2229], [112.6355, -7.2207], [112.6374, -7.2219], [112.6344, -7.2275], [112.6343, -7.2349], [112.6356, -7.2355], [112.6346, -7.2399], [112.6335, -7.2394], [112.6318, -7.2432], [112.6343, -7.2446], [112.6305, -7.2537], [112.6322, -7.2597], [112.6262, -7.2613], [112.6198, -7.2582]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578281", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.17_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Pakal", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_7f8e323b97de06b2be09ae41c725e965.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Pakal<br><b>Distributor:</b> SEMEN INDONESIA DISTRIBUTOR (JATIM), PT<br><b>Volume:</b> 483.03
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_7f8e323b97de06b2be09ae41c725e965.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_287e88989e224e44d45480b00c681501_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_287e88989e224e44d45480b00c681501_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_287e88989e224e44d45480b00c681501 = L.geoJson(null, {
+                onEachFeature: geo_json_287e88989e224e44d45480b00c681501_onEachFeature,
+            
+                style: geo_json_287e88989e224e44d45480b00c681501_styler,
+            ...{
+}
+        });
+
+        function geo_json_287e88989e224e44d45480b00c681501_add (data) {
+            geo_json_287e88989e224e44d45480b00c681501
+                .addData(data);
+        }
+            geo_json_287e88989e224e44d45480b00c681501_add({"features": [{"geometry": {"coordinates": [[[[112.7875, -7.3319], [112.7669, -7.332], [112.7575, -7.3303], [112.7648, -7.3158], [112.7617, -7.3147], [112.7641, -7.315], [112.7639, -7.3134], [112.7658, -7.3147], [112.7689, -7.3138], [112.7686, -7.3106], [112.7706, -7.3107], [112.771, -7.3086], [112.7794, -7.3108], [112.7916, -7.3075], [112.8073, -7.3086], [112.8084, -7.3071], [112.8061, -7.3024], [112.81, -7.2988], [112.8167, -7.3017], [112.822, -7.3068], [112.8387, -7.3102], [112.8445, -7.3048], [112.8457, -7.3042], [112.8463, -7.3055], [112.8425, -7.317], [112.8402, -7.3189], [112.8358, -7.3193], [112.8377, -7.3224], [112.8329, -7.3253], [112.8279, -7.3325], [112.8223, -7.3303], [112.7948, -7.3334], [112.7875, -7.3319]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578070", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.18_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Rungkut", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_287e88989e224e44d45480b00c681501.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Rungkut<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 427.25
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_287e88989e224e44d45480b00c681501.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_34e8b7480aeecf0bf41f82b40e01b93e_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_34e8b7480aeecf0bf41f82b40e01b93e_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_34e8b7480aeecf0bf41f82b40e01b93e = L.geoJson(null, {
+                onEachFeature: geo_json_34e8b7480aeecf0bf41f82b40e01b93e_onEachFeature,
+            
+                style: geo_json_34e8b7480aeecf0bf41f82b40e01b93e_styler,
+            ...{
+}
+        });
+
+        function geo_json_34e8b7480aeecf0bf41f82b40e01b93e_add (data) {
+            geo_json_34e8b7480aeecf0bf41f82b40e01b93e
+                .addData(data);
+        }
+            geo_json_34e8b7480aeecf0bf41f82b40e01b93e_add({"features": [{"geometry": {"coordinates": [[[[112.6824, -7.2784], [112.6784, -7.2814], [112.6786, -7.2837], [112.6741, -7.2827], [112.675, -7.2885], [112.6735, -7.2881], [112.6715, -7.2926], [112.6559, -7.2896], [112.6484, -7.2915], [112.6477, -7.2885], [112.6287, -7.2896], [112.6267, -7.2829], [112.6282, -7.2787], [112.6264, -7.2772], [112.6314, -7.2747], [112.6328, -7.264], [112.6362, -7.2646], [112.6398, -7.2592], [112.6444, -7.26], [112.6464, -7.2576], [112.6522, -7.2577], [112.6515, -7.264], [112.6547, -7.2656], [112.6566, -7.263], [112.6606, -7.2628], [112.6631, -7.265], [112.6622, -7.2695], [112.6661, -7.2722], [112.6697, -7.2697], [112.6661, -7.2682], [112.6672, -7.2632], [112.6759, -7.2621], [112.6768, -7.267], [112.6733, -7.2673], [112.6727, -7.2708], [112.678, -7.2719], [112.6812, -7.2769], [112.683, -7.2755], [112.6841, -7.2769], [112.6824, -7.2784]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578141", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.19_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Sambikerep", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_34e8b7480aeecf0bf41f82b40e01b93e.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Sambikerep<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 382.18
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_34e8b7480aeecf0bf41f82b40e01b93e.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c = L.geoJson(null, {
+                onEachFeature: geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c_onEachFeature,
+            
+                style: geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c_styler,
+            ...{
+}
+        });
+
+        function geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c_add (data) {
+            geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c
+                .addData(data);
+        }
+            geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c_add({"features": [{"geometry": {"coordinates": [[[[112.7152, -7.2857], [112.7174, -7.2795], [112.7096, -7.2776], [112.7101, -7.2757], [112.7086, -7.2757], [112.7088, -7.273], [112.7107, -7.2731], [112.7127, -7.2671], [112.7143, -7.2561], [112.7151, -7.2551], [112.7252, -7.2571], [112.7261, -7.2558], [112.7343, -7.2559], [112.7267, -7.2747], [112.7302, -7.284], [112.7304, -7.289], [112.7287, -7.2925], [112.7134, -7.2903], [112.7152, -7.2857]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578170", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.20_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Sawahan", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Sawahan<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 93.405
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_ec9a42af122ec00d02ecc7b56610455c_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_ec9a42af122ec00d02ecc7b56610455c_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_ec9a42af122ec00d02ecc7b56610455c = L.geoJson(null, {
+                onEachFeature: geo_json_ec9a42af122ec00d02ecc7b56610455c_onEachFeature,
+            
+                style: geo_json_ec9a42af122ec00d02ecc7b56610455c_styler,
+            ...{
+}
+        });
+
+        function geo_json_ec9a42af122ec00d02ecc7b56610455c_add (data) {
+            geo_json_ec9a42af122ec00d02ecc7b56610455c
+                .addData(data);
+        }
+            geo_json_ec9a42af122ec00d02ecc7b56610455c_add({"features": [{"geometry": {"coordinates": [[[[112.7581, -7.2254], [112.7576, -7.2346], [112.7468, -7.2321], [112.7457, -7.2301], [112.7429, -7.2343], [112.7412, -7.2338], [112.741, -7.2253], [112.7381, -7.2238], [112.7375, -7.2094], [112.7349, -7.1961], [112.7476, -7.1942], [112.7486, -7.1952], [112.7461, -7.1967], [112.7518, -7.1999], [112.757, -7.1978], [112.758, -7.2035], [112.7621, -7.2083], [112.7592, -7.2221], [112.7606, -7.2236], [112.7581, -7.2254]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578230", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.21_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Semampir", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ec9a42af122ec00d02ecc7b56610455c.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Semampir<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 120.52
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_ec9a42af122ec00d02ecc7b56610455c.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_9a6c5e484ace27f5775b82dd174d3159_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_9a6c5e484ace27f5775b82dd174d3159_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_9a6c5e484ace27f5775b82dd174d3159 = L.geoJson(null, {
+                onEachFeature: geo_json_9a6c5e484ace27f5775b82dd174d3159_onEachFeature,
+            
+                style: geo_json_9a6c5e484ace27f5775b82dd174d3159_styler,
+            ...{
+}
+        });
+
+        function geo_json_9a6c5e484ace27f5775b82dd174d3159_add (data) {
+            geo_json_9a6c5e484ace27f5775b82dd174d3159
+                .addData(data);
+        }
+            geo_json_9a6c5e484ace27f5775b82dd174d3159_add({"features": [{"geometry": {"coordinates": [[[[112.7533, -7.2483], [112.7519, -7.2448], [112.7473, -7.2435], [112.7433, -7.236], [112.743, -7.2335], [112.7455, -7.2301], [112.7468, -7.2321], [112.7577, -7.2353], [112.7641, -7.2355], [112.7593, -7.249], [112.7533, -7.2483]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578220", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.22_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Simokerto", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_9a6c5e484ace27f5775b82dd174d3159.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Simokerto<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 1926.165
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_9a6c5e484ace27f5775b82dd174d3159.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_a0c9a49049687a91ac7fecf7065e7620_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "green", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_a0c9a49049687a91ac7fecf7065e7620_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_a0c9a49049687a91ac7fecf7065e7620 = L.geoJson(null, {
+                onEachFeature: geo_json_a0c9a49049687a91ac7fecf7065e7620_onEachFeature,
+            
+                style: geo_json_a0c9a49049687a91ac7fecf7065e7620_styler,
+            ...{
+}
+        });
+
+        function geo_json_a0c9a49049687a91ac7fecf7065e7620_add (data) {
+            geo_json_a0c9a49049687a91ac7fecf7065e7620
+                .addData(data);
+        }
+            geo_json_a0c9a49049687a91ac7fecf7065e7620_add({"features": [{"geometry": {"coordinates": [[[[112.7012, -7.2841], [112.7044, -7.2828], [112.7081, -7.2838], [112.7069, -7.2897], [112.7056, -7.2895], [112.7034, -7.2931], [112.6941, -7.2897], [112.6949, -7.2864], [112.6967, -7.2855], [112.6944, -7.2843], [112.6972, -7.2807], [112.6954, -7.2785], [112.6899, -7.2778], [112.6871, -7.2791], [112.6845, -7.275], [112.686, -7.2667], [112.6875, -7.2664], [112.6879, -7.2622], [112.6923, -7.2516], [112.6956, -7.2495], [112.6952, -7.2479], [112.6979, -7.2514], [112.6983, -7.2495], [112.7014, -7.2489], [112.7001, -7.2504], [112.7022, -7.255], [112.711, -7.2522], [112.7143, -7.2561], [112.7127, -7.2671], [112.7107, -7.2731], [112.7088, -7.273], [112.708, -7.2791], [112.7049, -7.2772], [112.6995, -7.2821], [112.7012, -7.2841]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578160", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.23_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "SukoManunggal", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_a0c9a49049687a91ac7fecf7065e7620.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> SukoManunggal<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 140.575
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_a0c9a49049687a91ac7fecf7065e7620.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_7f62124d4ca7c1af05dc0ec8fb998459_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_7f62124d4ca7c1af05dc0ec8fb998459_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_7f62124d4ca7c1af05dc0ec8fb998459 = L.geoJson(null, {
+                onEachFeature: geo_json_7f62124d4ca7c1af05dc0ec8fb998459_onEachFeature,
+            
+                style: geo_json_7f62124d4ca7c1af05dc0ec8fb998459_styler,
+            ...{
+}
+        });
+
+        function geo_json_7f62124d4ca7c1af05dc0ec8fb998459_add (data) {
+            geo_json_7f62124d4ca7c1af05dc0ec8fb998459
+                .addData(data);
+        }
+            geo_json_7f62124d4ca7c1af05dc0ec8fb998459_add({"features": [{"geometry": {"coordinates": [[[[112.762, -7.3056], [112.763, -7.2892], [112.7654, -7.2849], [112.7696, -7.2841], [112.7705, -7.2811], [112.7814, -7.282], [112.7818, -7.2845], [112.7852, -7.2842], [112.7857, -7.28], [112.7844, -7.2801], [112.7839, -7.2769], [112.7994, -7.2743], [112.8012, -7.2807], [112.8005, -7.2845], [112.8038, -7.2851], [112.8117, -7.2809], [112.8181, -7.2723], [112.8279, -7.2695], [112.8294, -7.273], [112.8398, -7.2777], [112.8443, -7.2867], [112.845, -7.2933], [112.8469, -7.2967], [112.8457, -7.3042], [112.8391, -7.3102], [112.822, -7.3068], [112.8169, -7.3018], [112.8104, -7.2988], [112.8061, -7.3023], [112.8084, -7.3072], [112.8069, -7.3087], [112.7916, -7.3075], [112.7793, -7.3108], [112.762, -7.3056]], [[112.7713, -7.2865], [112.7708, -7.2894], [112.7724, -7.2893], [112.7737, -7.2853], [112.7715, -7.285], [112.7713, -7.2865]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578080", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.24_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Sukolilo", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_7f62124d4ca7c1af05dc0ec8fb998459.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Sukolilo<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 98.135
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_7f62124d4ca7c1af05dc0ec8fb998459.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_28f1853505c7263e23fb67300f28f2f3_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_28f1853505c7263e23fb67300f28f2f3_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_28f1853505c7263e23fb67300f28f2f3 = L.geoJson(null, {
+                onEachFeature: geo_json_28f1853505c7263e23fb67300f28f2f3_onEachFeature,
+            
+                style: geo_json_28f1853505c7263e23fb67300f28f2f3_styler,
+            ...{
+}
+        });
+
+        function geo_json_28f1853505c7263e23fb67300f28f2f3_add (data) {
+            geo_json_28f1853505c7263e23fb67300f28f2f3
+                .addData(data);
+        }
+            geo_json_28f1853505c7263e23fb67300f28f2f3_add({"features": [{"geometry": {"coordinates": [[[[112.7511, -7.2675], [112.7528, -7.2561], [112.7505, -7.256], [112.7497, -7.2514], [112.7531, -7.2514], [112.7533, -7.2491], [112.7593, -7.249], [112.7637, -7.2363], [112.7747, -7.2369], [112.7776, -7.2351], [112.7779, -7.233], [112.7795, -7.233], [112.7804, -7.2357], [112.784, -7.2351], [112.7828, -7.2473], [112.7893, -7.2478], [112.7887, -7.2502], [112.7836, -7.2489], [112.7802, -7.2525], [112.7822, -7.2533], [112.7809, -7.2548], [112.7772, -7.255], [112.7739, -7.2625], [112.7756, -7.2618], [112.7781, -7.2635], [112.7642, -7.2628], [112.7626, -7.2659], [112.7565, -7.2656], [112.7547, -7.269], [112.7511, -7.2675]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578200", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.25_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Tambaksari", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_28f1853505c7263e23fb67300f28f2f3.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Tambaksari<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 381.94
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_28f1853505c7263e23fb67300f28f2f3.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_b5a2b063836d21c7ee79125a5e048bbd_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_b5a2b063836d21c7ee79125a5e048bbd_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_b5a2b063836d21c7ee79125a5e048bbd = L.geoJson(null, {
+                onEachFeature: geo_json_b5a2b063836d21c7ee79125a5e048bbd_onEachFeature,
+            
+                style: geo_json_b5a2b063836d21c7ee79125a5e048bbd_styler,
+            ...{
+}
+        });
+
+        function geo_json_b5a2b063836d21c7ee79125a5e048bbd_add (data) {
+            geo_json_b5a2b063836d21c7ee79125a5e048bbd
+                .addData(data);
+        }
+            geo_json_b5a2b063836d21c7ee79125a5e048bbd_add({"features": [{"geometry": {"coordinates": [[[[112.6843, -7.2764], [112.683, -7.2755], [112.6812, -7.2769], [112.678, -7.2719], [112.6728, -7.2711], [112.6733, -7.2673], [112.6768, -7.267], [112.6757, -7.262], [112.6715, -7.2624], [112.6713, -7.2636], [112.6672, -7.2632], [112.6661, -7.2682], [112.6698, -7.2691], [112.6681, -7.2717], [112.6661, -7.2722], [112.6622, -7.2695], [112.6631, -7.265], [112.6588, -7.2611], [112.66, -7.2562], [112.6544, -7.2547], [112.6545, -7.2417], [112.66, -7.2371], [112.6652, -7.2396], [112.6666, -7.2424], [112.6697, -7.2419], [112.6716, -7.2373], [112.6755, -7.2378], [112.6739, -7.245], [112.6778, -7.2462], [112.6769, -7.249], [112.6822, -7.2499], [112.6813, -7.2556], [112.6861, -7.2572], [112.6863, -7.2531], [112.6921, -7.2528], [112.6879, -7.2622], [112.6875, -7.2664], [112.686, -7.2667], [112.6843, -7.2764]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578150", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.26_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Tandes", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_b5a2b063836d21c7ee79125a5e048bbd.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Tandes<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 310.375
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_b5a2b063836d21c7ee79125a5e048bbd.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_87813371f7db8c91b4f73f9a6cb61937_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_87813371f7db8c91b4f73f9a6cb61937_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_87813371f7db8c91b4f73f9a6cb61937 = L.geoJson(null, {
+                onEachFeature: geo_json_87813371f7db8c91b4f73f9a6cb61937_onEachFeature,
+            
+                style: geo_json_87813371f7db8c91b4f73f9a6cb61937_styler,
+            ...{
+}
+        });
+
+        function geo_json_87813371f7db8c91b4f73f9a6cb61937_add (data) {
+            geo_json_87813371f7db8c91b4f73f9a6cb61937
+                .addData(data);
+        }
+            geo_json_87813371f7db8c91b4f73f9a6cb61937_add({"features": [{"geometry": {"coordinates": [[[[112.7414, -7.2767], [112.7423, -7.2733], [112.7439, -7.2743], [112.747, -7.2855], [112.7428, -7.2903], [112.7359, -7.2897], [112.7267, -7.2747], [112.7332, -7.2584], [112.7405, -7.2621], [112.7414, -7.269], [112.7389, -7.2686], [112.7383, -7.2709], [112.7406, -7.2732], [112.7384, -7.2739], [112.7378, -7.2765], [112.7414, -7.2767]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578180", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.27_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Tegalsari", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_87813371f7db8c91b4f73f9a6cb61937.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Tegalsari<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 1542.185
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_87813371f7db8c91b4f73f9a6cb61937.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_948d2d986068dc432adce57d40fb76b9_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_948d2d986068dc432adce57d40fb76b9_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_948d2d986068dc432adce57d40fb76b9 = L.geoJson(null, {
+                onEachFeature: geo_json_948d2d986068dc432adce57d40fb76b9_onEachFeature,
+            
+                style: geo_json_948d2d986068dc432adce57d40fb76b9_styler,
+            ...{
+}
+        });
+
+        function geo_json_948d2d986068dc432adce57d40fb76b9_add (data) {
+            geo_json_948d2d986068dc432adce57d40fb76b9
+                .addData(data);
+        }
+            geo_json_948d2d986068dc432adce57d40fb76b9_add({"features": [{"geometry": {"coordinates": [[[[112.7548, -7.3372], [112.7535, -7.3422], [112.7419, -7.3407], [112.744, -7.3226], [112.7467, -7.3231], [112.748, -7.3175], [112.7508, -7.3181], [112.7542, -7.3153], [112.7533, -7.3116], [112.7568, -7.3123], [112.7595, -7.3088], [112.7592, -7.3054], [112.771, -7.3086], [112.7706, -7.3107], [112.7686, -7.3106], [112.7689, -7.3138], [112.7658, -7.3147], [112.7639, -7.3134], [112.7641, -7.315], [112.7617, -7.3147], [112.7648, -7.3158], [112.7548, -7.3372]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578050", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.28_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "TenggilisMejoyo", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_948d2d986068dc432adce57d40fb76b9.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> TenggilisMejoyo<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 35.575
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_948d2d986068dc432adce57d40fb76b9.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_a3436429160e1ba6afef7f133e855b53_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "blue", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_a3436429160e1ba6afef7f133e855b53_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_a3436429160e1ba6afef7f133e855b53 = L.geoJson(null, {
+                onEachFeature: geo_json_a3436429160e1ba6afef7f133e855b53_onEachFeature,
+            
+                style: geo_json_a3436429160e1ba6afef7f133e855b53_styler,
+            ...{
+}
+        });
+
+        function geo_json_a3436429160e1ba6afef7f133e855b53_add (data) {
+            geo_json_a3436429160e1ba6afef7f133e855b53
+                .addData(data);
+        }
+            geo_json_a3436429160e1ba6afef7f133e855b53_add({"features": [{"geometry": {"coordinates": [[[[112.6941, -7.3342], [112.6845, -7.3316], [112.6795, -7.3339], [112.675, -7.3331], [112.6763, -7.3303], [112.6793, -7.3288], [112.6795, -7.3248], [112.6792, -7.3194], [112.6716, -7.3175], [112.6743, -7.3074], [112.6741, -7.3002], [112.6756, -7.2993], [112.6756, -7.2943], [112.6717, -7.2938], [112.6735, -7.2881], [112.675, -7.2885], [112.6741, -7.2827], [112.6786, -7.2837], [112.6786, -7.2876], [112.6757, -7.2942], [112.6841, -7.2989], [112.683, -7.3016], [112.6865, -7.3013], [112.6881, -7.2994], [112.6962, -7.3012], [112.6969, -7.3], [112.6971, -7.3016], [112.7025, -7.3021], [112.7051, -7.3001], [112.7077, -7.3035], [112.7043, -7.3038], [112.7038, -7.3073], [112.7139, -7.3077], [112.7113, -7.3127], [112.7048, -7.3131], [112.7017, -7.3153], [112.6976, -7.3238], [112.6908, -7.3224], [112.6903, -7.3243], [112.6953, -7.3264], [112.6963, -7.332], [112.6955, -7.3344], [112.6941, -7.3342]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578130", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.29_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Wiyung", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_a3436429160e1ba6afef7f133e855b53.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Wiyung<br><b>Distributor:</b> SEMEN INDONESIA DISTRIBUTOR (JATIM), PT<br><b>Volume:</b> 96.225
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_a3436429160e1ba6afef7f133e855b53.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_ea3b2b641d5a72c3651abda3fb553102_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_ea3b2b641d5a72c3651abda3fb553102_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_ea3b2b641d5a72c3651abda3fb553102 = L.geoJson(null, {
+                onEachFeature: geo_json_ea3b2b641d5a72c3651abda3fb553102_onEachFeature,
+            
+                style: geo_json_ea3b2b641d5a72c3651abda3fb553102_styler,
+            ...{
+}
+        });
+
+        function geo_json_ea3b2b641d5a72c3651abda3fb553102_add (data) {
+            geo_json_ea3b2b641d5a72c3651abda3fb553102
+                .addData(data);
+        }
+            geo_json_ea3b2b641d5a72c3651abda3fb553102_add({"features": [{"geometry": {"coordinates": [[[[112.7429, -7.341], [112.742, -7.3452], [112.7378, -7.3449], [112.7378, -7.3405], [112.7293, -7.3395], [112.7352, -7.3112], [112.7406, -7.311], [112.7417, -7.3059], [112.7592, -7.3054], [112.7595, -7.3088], [112.7568, -7.3123], [112.7533, -7.3116], [112.7542, -7.3153], [112.7508, -7.3181], [112.748, -7.3175], [112.7467, -7.3231], [112.744, -7.3226], [112.742, -7.3387], [112.7429, -7.341]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578040", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.30_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Wonocolo", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ea3b2b641d5a72c3651abda3fb553102.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Wonocolo<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 4.12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_ea3b2b641d5a72c3651abda3fb553102.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        function geo_json_38d7c7d667324ec785713830efb0943f_styler(feature) {
+            switch(feature.properties.GID_3) {
+                default:
+                    return {"color": "black", "fillColor": "orange", "fillOpacity": 0.3, "weight": 2};
+            }
+        }
+
+        function geo_json_38d7c7d667324ec785713830efb0943f_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_38d7c7d667324ec785713830efb0943f = L.geoJson(null, {
+                onEachFeature: geo_json_38d7c7d667324ec785713830efb0943f_onEachFeature,
+            
+                style: geo_json_38d7c7d667324ec785713830efb0943f_styler,
+            ...{
+}
+        });
+
+        function geo_json_38d7c7d667324ec785713830efb0943f_add (data) {
+            geo_json_38d7c7d667324ec785713830efb0943f
+                .addData(data);
+        }
+            geo_json_38d7c7d667324ec785713830efb0943f_add({"features": [{"geometry": {"coordinates": [[[[112.7353, -7.3106], [112.7195, -7.3071], [112.7211, -7.2958], [112.7246, -7.2939], [112.725, -7.2922], [112.7287, -7.2925], [112.7304, -7.289], [112.7275, -7.2765], [112.7316, -7.281], [112.7359, -7.2897], [112.7428, -7.2903], [112.7472, -7.2847], [112.7441, -7.2772], [112.7503, -7.2773], [112.7472, -7.2911], [112.7571, -7.2936], [112.7544, -7.304], [112.7568, -7.3047], [112.7566, -7.306], [112.7417, -7.3059], [112.7406, -7.311], [112.739, -7.312], [112.7353, -7.3106]]]], "type": "MultiPolygon"}, "properties": {"CC_3": "3578110", "COUNTRY": "Indonesia", "ENGTYPE_3": "Sub-district", "GID_0": "IDN", "GID_1": "IDN.11_1", "GID_2": "IDN.11.35_1", "GID_3": "IDN.11.35.31_1", "HASC_3": "NA", "NAME_1": "JawaTimur", "NAME_2": "Surabaya", "NAME_3": "Wonokromo", "NL_NAME_1": "NA", "NL_NAME_2": "NA", "NL_NAME_3": "NA", "TYPE_3": "Kecamatan", "VARNAME_3": "NA"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_38d7c7d667324ec785713830efb0943f.bindTooltip(
+                `<div>
+                     <b>Kecamatan:</b> Wonokromo<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 213.715
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_38d7c7d667324ec785713830efb0943f.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            var marker_717f72c057480f9958dfcc94ccbc422c = L.marker(
+                [-7.228544, 112.774256],
+                {
+}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            var icon_4dc51f0a9737d470f408840199f74011 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "warehouse",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d5dc1bff5d27b860162d0e3ee4c04a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c861f2abcddf9adb9b9df38d2439583 = $(`<div id="html_9c861f2abcddf9adb9b9df38d2439583" style="width: 100.0%; height: 100.0%;">         <b>Gudang:</b> GD. BIG. SURABAYA KALILOM<br>         <b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br>         <b>Kapasitas:</b> 37500.0 ton<br>         <b>Kecamatan:</b> KENJERAN         </div>`)[0];
+                popup_2d5dc1bff5d27b860162d0e3ee4c04a3.setContent(html_9c861f2abcddf9adb9b9df38d2439583);
+            
+        
+
+        marker_717f72c057480f9958dfcc94ccbc422c.bindPopup(popup_2d5dc1bff5d27b860162d0e3ee4c04a3)
+        ;
+
+        
+    
+    
+                marker_717f72c057480f9958dfcc94ccbc422c.setIcon(icon_4dc51f0a9737d470f408840199f74011);
+            
+    
+            var marker_0448e7f1645a6f78177101912d2f82ab = L.marker(
+                [-7.249661, 112.67983],
+                {
+}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            var icon_4e8f2b3bdffdd840ce3d486cc74cd4a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "warehouse",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a34e0efd049c0700f805ce2c4fa14c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c66a322e6820f96eabae04e945ff48d = $(`<div id="html_0c66a322e6820f96eabae04e945ff48d" style="width: 100.0%; height: 100.0%;">         <b>Gudang:</b> GD. BIG. SURABAYA MARGO INDAH<br>         <b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br>         <b>Kapasitas:</b> 39600.0 ton<br>         <b>Kecamatan:</b> TANDES         </div>`)[0];
+                popup_9a34e0efd049c0700f805ce2c4fa14c1.setContent(html_0c66a322e6820f96eabae04e945ff48d);
+            
+        
+
+        marker_0448e7f1645a6f78177101912d2f82ab.bindPopup(popup_9a34e0efd049c0700f805ce2c4fa14c1)
+        ;
+
+        
+    
+    
+                marker_0448e7f1645a6f78177101912d2f82ab.setIcon(icon_4e8f2b3bdffdd840ce3d486cc74cd4a8);
+            
+    
+            var marker_d03b37d3c6ec25255e07e2dc85bf77e6 = L.marker(
+                [-7.234296, 112.687862],
+                {
+}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            var icon_a0fb87a81069fdab12fc7a8fb736f9e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "warehouse",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b4c196455b49618ebe1957b30a9c693c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dde6381f1dd5443a568f28026fe9be6a = $(`<div id="html_dde6381f1dd5443a568f28026fe9be6a" style="width: 100.0%; height: 100.0%;">         <b>Gudang:</b> GD. BPP. SURABAYA<br>         <b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br>         <b>Kapasitas:</b> 20000.0 ton<br>         <b>Kecamatan:</b> ASEMROWO         </div>`)[0];
+                popup_b4c196455b49618ebe1957b30a9c693c.setContent(html_dde6381f1dd5443a568f28026fe9be6a);
+            
+        
+
+        marker_d03b37d3c6ec25255e07e2dc85bf77e6.bindPopup(popup_b4c196455b49618ebe1957b30a9c693c)
+        ;
+
+        
+    
+    
+                marker_d03b37d3c6ec25255e07e2dc85bf77e6.setIcon(icon_a0fb87a81069fdab12fc7a8fb736f9e6);
+            
+    
+            var marker_f58aedaafd3d85c835d4274bf83513ef = L.marker(
+                [-7.264448, 112.699433],
+                {
+}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            var icon_e59c3fdecb494465f80b2e6947856c4e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "warehouse",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c5c182ac53750a765e41887ccbaa076c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e8e6d0b2aec36225ea1457476dc26e02 = $(`<div id="html_e8e6d0b2aec36225ea1457476dc26e02" style="width: 100.0%; height: 100.0%;">         <b>Gudang:</b> GD. SIA. SURABAYA<br>         <b>Distributor:</b> SUMBER INTI ALAM, PT<br>         <b>Kapasitas:</b> 12500.0 ton<br>         <b>Kecamatan:</b> SUKOMANUNGGAL         </div>`)[0];
+                popup_c5c182ac53750a765e41887ccbaa076c.setContent(html_e8e6d0b2aec36225ea1457476dc26e02);
+            
+        
+
+        marker_f58aedaafd3d85c835d4274bf83513ef.bindPopup(popup_c5c182ac53750a765e41887ccbaa076c)
+        ;
+
+        
+    
+    
+                marker_f58aedaafd3d85c835d4274bf83513ef.setIcon(icon_e59c3fdecb494465f80b2e6947856c4e);
+            
+    
+            var marker_7c69de6dcf0efa1c2762a01ff496fad3 = L.marker(
+                [-7.262976, 112.69888],
+                {
+}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            var icon_23855686427a5122ba23e6f2a13d680a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "warehouse",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0dec8007f05ce9764162c26d8da7d357 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a545e47f7b0f952f39d0d3f14cd37ea6 = $(`<div id="html_a545e47f7b0f952f39d0d3f14cd37ea6" style="width: 100.0%; height: 100.0%;">         <b>Gudang:</b> GD. SID. SURABAYA<br>         <b>Distributor:</b> SEMEN INDONESIA DISTRIBUTOR (JATIM), PT<br>         <b>Kapasitas:</b> 6500.0 ton<br>         <b>Kecamatan:</b> SUKOMANUNGGAL         </div>`)[0];
+                popup_0dec8007f05ce9764162c26d8da7d357.setContent(html_a545e47f7b0f952f39d0d3f14cd37ea6);
+            
+        
+
+        marker_7c69de6dcf0efa1c2762a01ff496fad3.bindPopup(popup_0dec8007f05ce9764162c26d8da7d357)
+        ;
+
+        
+    
+    
+                marker_7c69de6dcf0efa1c2762a01ff496fad3.setIcon(icon_23855686427a5122ba23e6f2a13d680a);
+            
+    
+            var layer_control_91b9dc8351e2af2e56a803739003be9b_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_53dd74e816f9ae155ee4128e0d21e4aa,
+                },
+                overlays :  {
+                    "Geofence Kecamatan" : geo_json_38d7c7d667324ec785713830efb0943f,
+                },
+            };
+            let layer_control_91b9dc8351e2af2e56a803739003be9b = L.control.layers(
+                layer_control_91b9dc8351e2af2e56a803739003be9b_layers.base_layers,
+                layer_control_91b9dc8351e2af2e56a803739003be9b_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+
+        
+    
+            tile_layer_53dd74e816f9ae155ee4128e0d21e4aa.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_ff33fe30af858f3640f94b66ff5bd308.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_e97eb8cc5636602f96ad7b75cd57bdcb.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_d0f605a2daf262e89cf2b77f7d9833a7.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_4b05e81bb350d65b89a7b375790be744.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_10fca50a232b7e0653078b7b284b0f3f.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_8879aa929fa26f3539217144dad1f20c.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_b0462e8d44c449c1a37106fb1f07ce04.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_f9815648e3b7a4163a083b030a7d49fc.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_3957e50e6d0e19d88110259afee3a117.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_fa5522a856cf33cc4fccad07e454e1c0.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_5d92bc31724d62f716d9be8e01bc62d2.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_afdc23cca68f0e8721179eaeb5480862.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_76cbe0813c196e229eef78401dd012a7.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_7f8e323b97de06b2be09ae41c725e965.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_287e88989e224e44d45480b00c681501.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_34e8b7480aeecf0bf41f82b40e01b93e.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_ec9a42af122ec00d02ecc7b56610455c.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_9a6c5e484ace27f5775b82dd174d3159.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_a0c9a49049687a91ac7fecf7065e7620.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_7f62124d4ca7c1af05dc0ec8fb998459.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_28f1853505c7263e23fb67300f28f2f3.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_b5a2b063836d21c7ee79125a5e048bbd.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_87813371f7db8c91b4f73f9a6cb61937.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_948d2d986068dc432adce57d40fb76b9.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_a3436429160e1ba6afef7f133e855b53.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_ea3b2b641d5a72c3651abda3fb553102.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_38d7c7d667324ec785713830efb0943f.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+                marker_717f72c057480f9958dfcc94ccbc422c.setIcon(icon_4dc51f0a9737d470f408840199f74011);
+            
+    
+                marker_0448e7f1645a6f78177101912d2f82ab.setIcon(icon_4e8f2b3bdffdd840ce3d486cc74cd4a8);
+            
+    
+                marker_d03b37d3c6ec25255e07e2dc85bf77e6.setIcon(icon_a0fb87a81069fdab12fc7a8fb736f9e6);
+            
+    
+                marker_f58aedaafd3d85c835d4274bf83513ef.setIcon(icon_e59c3fdecb494465f80b2e6947856c4e);
+            
+    
+                marker_7c69de6dcf0efa1c2762a01ff496fad3.setIcon(icon_23855686427a5122ba23e6f2a13d680a);
+            
+    
+            var circle_marker_4aadd9f9845d97f2e64f3d21fd6ccad7 = L.circleMarker(
+                [-7.237462990576181, 112.68968532665443],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_3158c7f9eef898d8309a83dc11bf92fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c1c5fce90e97d8f05b7d038bdda2aa92 = $(`<div id="html_c1c5fce90e97d8f05b7d038bdda2aa92" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> ASEMROWO<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 520.46 ton</div>`)[0];
+                popup_3158c7f9eef898d8309a83dc11bf92fd.setContent(html_c1c5fce90e97d8f05b7d038bdda2aa92);
+            
+        
+
+        circle_marker_4aadd9f9845d97f2e64f3d21fd6ccad7.bindPopup(popup_3158c7f9eef898d8309a83dc11bf92fd)
+        ;
+
+        
+    
+    
+            circle_marker_4aadd9f9845d97f2e64f3d21fd6ccad7.bindTooltip(
+                `<div>
+                     <b>ASEMROWO</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 520.46 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ec82b974487856d35f5d255905cb34f = L.circleMarker(
+                [-7.226751303763048, 112.64631001043648],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_c5f1602591e9c927122b349edff99cd9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4ee52cfc4567a7c68d6815b6de68b822 = $(`<div id="html_4ee52cfc4567a7c68d6815b6de68b822" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> BENOWO<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 154.645 ton</div>`)[0];
+                popup_c5f1602591e9c927122b349edff99cd9.setContent(html_4ee52cfc4567a7c68d6815b6de68b822);
+            
+        
+
+        circle_marker_5ec82b974487856d35f5d255905cb34f.bindPopup(popup_c5f1602591e9c927122b349edff99cd9)
+        ;
+
+        
+    
+    
+            circle_marker_5ec82b974487856d35f5d255905cb34f.bindTooltip(
+                `<div>
+                     <b>BENOWO</b><br>Distributor: SUMBER INTI ALAM, PT<br>Volume: 154.645 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddf2b8ed176f2e7f0c01373debc07329 = L.circleMarker(
+                [-7.248739216056178, 112.72784870198608],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_f8a7254755a10c863c14655e7802bc22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_422c5059d6c34297b368ecf3be8de227 = $(`<div id="html_422c5059d6c34297b368ecf3be8de227" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> BUBUTAN<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 72.405 ton</div>`)[0];
+                popup_f8a7254755a10c863c14655e7802bc22.setContent(html_422c5059d6c34297b368ecf3be8de227);
+            
+        
+
+        circle_marker_ddf2b8ed176f2e7f0c01373debc07329.bindPopup(popup_f8a7254755a10c863c14655e7802bc22)
+        ;
+
+        
+    
+    
+            circle_marker_ddf2b8ed176f2e7f0c01373debc07329.bindTooltip(
+                `<div>
+                     <b>BUBUTAN</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 72.405 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8cfce192eb691b9904e43826485f7ff1 = L.circleMarker(
+                [-7.238764361856334, 112.79010166328433],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_abe4d83cab4d6c71c5c8f9ba09c7b4c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c3c2bc64b04ef6e84f35ac2b2603ac6 = $(`<div id="html_2c3c2bc64b04ef6e84f35ac2b2603ac6" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> BULAK<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 247.35 ton</div>`)[0];
+                popup_abe4d83cab4d6c71c5c8f9ba09c7b4c9.setContent(html_2c3c2bc64b04ef6e84f35ac2b2603ac6);
+            
+        
+
+        circle_marker_8cfce192eb691b9904e43826485f7ff1.bindPopup(popup_abe4d83cab4d6c71c5c8f9ba09c7b4c9)
+        ;
+
+        
+    
+    
+            circle_marker_8cfce192eb691b9904e43826485f7ff1.bindTooltip(
+                `<div>
+                     <b>BULAK</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 247.35 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_86dd974903b2bc34cbb6378bdd1dbe70 = L.circleMarker(
+                [-7.291930255364654, 112.69997116170659],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_0171c161549d69f2ddc975fc0622f568 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53fce986cccbe29bdf85b67ba69549ea = $(`<div id="html_53fce986cccbe29bdf85b67ba69549ea" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> DUKUHPAKIS<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 352.25 ton</div>`)[0];
+                popup_0171c161549d69f2ddc975fc0622f568.setContent(html_53fce986cccbe29bdf85b67ba69549ea);
+            
+        
+
+        circle_marker_86dd974903b2bc34cbb6378bdd1dbe70.bindPopup(popup_0171c161549d69f2ddc975fc0622f568)
+        ;
+
+        
+    
+    
+            circle_marker_86dd974903b2bc34cbb6378bdd1dbe70.bindTooltip(
+                `<div>
+                     <b>DUKUHPAKIS</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 352.25 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4da3cf7567509037130549d70637e15f = L.circleMarker(
+                [-7.329838395098926, 112.72691389145739],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_a96163fb1dee9ab12eafaec6c5ab13d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_343bf26ece630d89125ef8917dadab7d = $(`<div id="html_343bf26ece630d89125ef8917dadab7d" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> GAYUNGAN<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 3.35 ton</div>`)[0];
+                popup_a96163fb1dee9ab12eafaec6c5ab13d1.setContent(html_343bf26ece630d89125ef8917dadab7d);
+            
+        
+
+        circle_marker_4da3cf7567509037130549d70637e15f.bindPopup(popup_a96163fb1dee9ab12eafaec6c5ab13d1)
+        ;
+
+        
+    
+    
+            circle_marker_4da3cf7567509037130549d70637e15f.bindTooltip(
+                `<div>
+                     <b>GAYUNGAN</b><br>Distributor: SUMBER INTI ALAM, PT<br>Volume: 3.35 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c4270cb8924d51c7922968fe980dee56 = L.circleMarker(
+                [-7.259215096378251, 112.74484044140951],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_103efa001a3ff93f9165bc82c9a7583d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dd0d6e7c7605847113dd8f597a1edef3 = $(`<div id="html_dd0d6e7c7605847113dd8f597a1edef3" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> GENTENG<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 0 ton</div>`)[0];
+                popup_103efa001a3ff93f9165bc82c9a7583d.setContent(html_dd0d6e7c7605847113dd8f597a1edef3);
+            
+        
+
+        circle_marker_c4270cb8924d51c7922968fe980dee56.bindPopup(popup_103efa001a3ff93f9165bc82c9a7583d)
+        ;
+
+        
+    
+    
+            circle_marker_c4270cb8924d51c7922968fe980dee56.bindTooltip(
+                `<div>
+                     <b>GENTENG</b><br>Distributor: SUMBER INTI ALAM, PT<br>Volume: 0 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2aa76a1145e5d68dc47d00cb23f8d90 = L.circleMarker(
+                [-7.279719656693071, 112.75946515960307],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_eaf951e28add2fc75fddcc01ffd4bb41 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e18435a31037b19aa925bd9d3a5d7d3 = $(`<div id="html_8e18435a31037b19aa925bd9d3a5d7d3" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> GUBENG<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 883.8 ton</div>`)[0];
+                popup_eaf951e28add2fc75fddcc01ffd4bb41.setContent(html_8e18435a31037b19aa925bd9d3a5d7d3);
+            
+        
+
+        circle_marker_f2aa76a1145e5d68dc47d00cb23f8d90.bindPopup(popup_eaf951e28add2fc75fddcc01ffd4bb41)
+        ;
+
+        
+    
+    
+            circle_marker_f2aa76a1145e5d68dc47d00cb23f8d90.bindTooltip(
+                `<div>
+                     <b>GUBENG</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 883.8 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30f338b7eaa5698a53205cd5213a89e4 = L.circleMarker(
+                [-7.337785904729432, 112.79504268675377],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_c75bee63f9f21164c2e11f5d47397ab5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86d8d94791d748faaf8131aa32b3cf67 = $(`<div id="html_86d8d94791d748faaf8131aa32b3cf67" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> GUNUNGANYAR<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 1375.35 ton</div>`)[0];
+                popup_c75bee63f9f21164c2e11f5d47397ab5.setContent(html_86d8d94791d748faaf8131aa32b3cf67);
+            
+        
+
+        circle_marker_30f338b7eaa5698a53205cd5213a89e4.bindPopup(popup_c75bee63f9f21164c2e11f5d47397ab5)
+        ;
+
+        
+    
+    
+            circle_marker_30f338b7eaa5698a53205cd5213a89e4.bindTooltip(
+                `<div>
+                     <b>GUNUNGANYAR</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 1375.35 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_37e5ba71b4374ec527b4ca82d82ce270 = L.circleMarker(
+                [-7.323093702435861, 112.71588095500564],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_faf940ef8e7f7f18bb703411d3bd3849 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_966779a198911550b570e2292a303852 = $(`<div id="html_966779a198911550b570e2292a303852" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> JAMBANGAN<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 702.64 ton</div>`)[0];
+                popup_faf940ef8e7f7f18bb703411d3bd3849.setContent(html_966779a198911550b570e2292a303852);
+            
+        
+
+        circle_marker_37e5ba71b4374ec527b4ca82d82ce270.bindPopup(popup_faf940ef8e7f7f18bb703411d3bd3849)
+        ;
+
+        
+    
+    
+            circle_marker_37e5ba71b4374ec527b4ca82d82ce270.bindTooltip(
+                `<div>
+                     <b>JAMBANGAN</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 702.64 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff11b7185a4d4c791a97422182e15f96 = L.circleMarker(
+                [-7.33516602779119, 112.6886198913255],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_ff592e3b0119fe3ab0140b2cc1fb60ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13f9f1208c616affaed3b43cec9d3b8a = $(`<div id="html_13f9f1208c616affaed3b43cec9d3b8a" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> KARANGPILANG<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 39.18 ton</div>`)[0];
+                popup_ff592e3b0119fe3ab0140b2cc1fb60ef.setContent(html_13f9f1208c616affaed3b43cec9d3b8a);
+            
+        
+
+        circle_marker_ff11b7185a4d4c791a97422182e15f96.bindPopup(popup_ff592e3b0119fe3ab0140b2cc1fb60ef)
+        ;
+
+        
+    
+    
+            circle_marker_ff11b7185a4d4c791a97422182e15f96.bindTooltip(
+                `<div>
+                     <b>KARANGPILANG</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 39.18 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e287833e416e9d20abc1a215040d6a5 = L.circleMarker(
+                [-7.217722000973959, 112.76892335936802],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_b93b09734f3257bb635b3a180378b827 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0040facb1b51cb4e2c6201f5d0c61d7a = $(`<div id="html_0040facb1b51cb4e2c6201f5d0c61d7a" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> KENJERAN<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 239.67 ton</div>`)[0];
+                popup_b93b09734f3257bb635b3a180378b827.setContent(html_0040facb1b51cb4e2c6201f5d0c61d7a);
+            
+        
+
+        circle_marker_7e287833e416e9d20abc1a215040d6a5.bindPopup(popup_b93b09734f3257bb635b3a180378b827)
+        ;
+
+        
+    
+    
+            circle_marker_7e287833e416e9d20abc1a215040d6a5.bindTooltip(
+                `<div>
+                     <b>KENJERAN</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 239.67 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b3e1832d39924ac49496268044f66e6 = L.circleMarker(
+                [-7.229110765717786, 112.72162793211452],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_5d183b22ed8403898f278947036ebdd9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_337504c8080afd7a49f3eb2b53b5978b = $(`<div id="html_337504c8080afd7a49f3eb2b53b5978b" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> KREMBANGAN<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 282.84 ton</div>`)[0];
+                popup_5d183b22ed8403898f278947036ebdd9.setContent(html_337504c8080afd7a49f3eb2b53b5978b);
+            
+        
+
+        circle_marker_1b3e1832d39924ac49496268044f66e6.bindPopup(popup_5d183b22ed8403898f278947036ebdd9)
+        ;
+
+        
+    
+    
+            circle_marker_1b3e1832d39924ac49496268044f66e6.bindTooltip(
+                `<div>
+                     <b>KREMBANGAN</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 282.84 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_700f8af4114d56aff62443dd286a70ca = L.circleMarker(
+                [-7.313210907677096, 112.65566944893935],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_94b539f1cfb950b4582e69a81f8a7248 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9201aae51e42803e5400f8dea32a219a = $(`<div id="html_9201aae51e42803e5400f8dea32a219a" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> LAKARSANTRI<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 761.78 ton</div>`)[0];
+                popup_94b539f1cfb950b4582e69a81f8a7248.setContent(html_9201aae51e42803e5400f8dea32a219a);
+            
+        
+
+        circle_marker_700f8af4114d56aff62443dd286a70ca.bindPopup(popup_94b539f1cfb950b4582e69a81f8a7248)
+        ;
+
+        
+    
+    
+            circle_marker_700f8af4114d56aff62443dd286a70ca.bindTooltip(
+                `<div>
+                     <b>LAKARSANTRI</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 761.78 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e3699a7619ee5afc87cde6fcb07ebe6a = L.circleMarker(
+                [-7.2674260787526315, 112.79712256996083],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_6f6f3d30ca39f5ed6604ab17507d3e22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ec83d139b3b4743bd484ce18b1a8e5e = $(`<div id="html_6ec83d139b3b4743bd484ce18b1a8e5e" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> MULYOREJO<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 107.88 ton</div>`)[0];
+                popup_6f6f3d30ca39f5ed6604ab17507d3e22.setContent(html_6ec83d139b3b4743bd484ce18b1a8e5e);
+            
+        
+
+        circle_marker_e3699a7619ee5afc87cde6fcb07ebe6a.bindPopup(popup_6f6f3d30ca39f5ed6604ab17507d3e22)
+        ;
+
+        
+    
+    
+            circle_marker_e3699a7619ee5afc87cde6fcb07ebe6a.bindTooltip(
+                `<div>
+                     <b>MULYOREJO</b><br>Distributor: SUMBER INTI ALAM, PT<br>Volume: 107.88 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_50bbd35e08df06ac2985be687228935d = L.circleMarker(
+                [-7.219628570094835, 112.7336449959962],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_b973e1c590e11e89ed85c3af23c32fd2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6189b1dd66b5f5ec99a5423388d2618 = $(`<div id="html_b6189b1dd66b5f5ec99a5423388d2618" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> PABEANCANTIAN<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 77.165 ton</div>`)[0];
+                popup_b973e1c590e11e89ed85c3af23c32fd2.setContent(html_b6189b1dd66b5f5ec99a5423388d2618);
+            
+        
+
+        circle_marker_50bbd35e08df06ac2985be687228935d.bindPopup(popup_b973e1c590e11e89ed85c3af23c32fd2)
+        ;
+
+        
+    
+    
+            circle_marker_50bbd35e08df06ac2985be687228935d.bindTooltip(
+                `<div>
+                     <b>PABEANCANTIAN</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 77.165 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4a48e20496fcfdc1783f3f5e22fc1fa6 = L.circleMarker(
+                [-7.229498498445865, 112.61610234499499],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_08499e08b553819f2e05cf80bf92ec18 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c0155c84f0f89c4b20ba47f1d1d2367 = $(`<div id="html_1c0155c84f0f89c4b20ba47f1d1d2367" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> PAKAL<br><b>Distributor:</b> SEMEN INDONESIA DISTRIBUTOR (JATIM), PT<br><b>Volume:</b> 483.03 ton</div>`)[0];
+                popup_08499e08b553819f2e05cf80bf92ec18.setContent(html_1c0155c84f0f89c4b20ba47f1d1d2367);
+            
+        
+
+        circle_marker_4a48e20496fcfdc1783f3f5e22fc1fa6.bindPopup(popup_08499e08b553819f2e05cf80bf92ec18)
+        ;
+
+        
+    
+    
+            circle_marker_4a48e20496fcfdc1783f3f5e22fc1fa6.bindTooltip(
+                `<div>
+                     <b>PAKAL</b><br>Distributor: SEMEN INDONESIA DISTRIBUTOR (JATIM), PT<br>Volume: 483.03 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64eb2f381eb05b227dc1371ef7e89f7e = L.circleMarker(
+                [-7.319182445665281, 112.8016640319851],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_6dac730e59fdb6250a1c4ff62334fbdf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0cc9b8a4dc34113c123a81fb50f4cc38 = $(`<div id="html_0cc9b8a4dc34113c123a81fb50f4cc38" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> RUNGKUT<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 427.25 ton</div>`)[0];
+                popup_6dac730e59fdb6250a1c4ff62334fbdf.setContent(html_0cc9b8a4dc34113c123a81fb50f4cc38);
+            
+        
+
+        circle_marker_64eb2f381eb05b227dc1371ef7e89f7e.bindPopup(popup_6dac730e59fdb6250a1c4ff62334fbdf)
+        ;
+
+        
+    
+    
+            circle_marker_64eb2f381eb05b227dc1371ef7e89f7e.bindTooltip(
+                `<div>
+                     <b>RUNGKUT</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 427.25 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5d9b706ad99607a59603bb8526791ca = L.circleMarker(
+                [-7.276542921511119, 112.65320768410216],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_a3c0888a73c78daa5aa6c0992948f902 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b71e2540c3fd8136c532f38a16ce888 = $(`<div id="html_8b71e2540c3fd8136c532f38a16ce888" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> SAMBIKEREP<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 382.18 ton</div>`)[0];
+                popup_a3c0888a73c78daa5aa6c0992948f902.setContent(html_8b71e2540c3fd8136c532f38a16ce888);
+            
+        
+
+        circle_marker_c5d9b706ad99607a59603bb8526791ca.bindPopup(popup_a3c0888a73c78daa5aa6c0992948f902)
+        ;
+
+        
+    
+    
+            circle_marker_c5d9b706ad99607a59603bb8526791ca.bindTooltip(
+                `<div>
+                     <b>SAMBIKEREP</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 382.18 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5f53aa0653d924a20080d7b6e7a725af = L.circleMarker(
+                [-7.272819604549965, 112.72157751425753],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_2f0602063f42d4ba758449de9c6cd920 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac38b6d06cc2ae97f86105c6036a1bb5 = $(`<div id="html_ac38b6d06cc2ae97f86105c6036a1bb5" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> SAWAHAN<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 93.405 ton</div>`)[0];
+                popup_2f0602063f42d4ba758449de9c6cd920.setContent(html_ac38b6d06cc2ae97f86105c6036a1bb5);
+            
+        
+
+        circle_marker_5f53aa0653d924a20080d7b6e7a725af.bindPopup(popup_2f0602063f42d4ba758449de9c6cd920)
+        ;
+
+        
+    
+    
+            circle_marker_5f53aa0653d924a20080d7b6e7a725af.bindTooltip(
+                `<div>
+                     <b>SAWAHAN</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 93.405 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d70eb9d5908b0c29f7fb3cc84c41da96 = L.circleMarker(
+                [-7.2139690266937615, 112.74844130371002],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_4bc46db0b60412cb745c5a4f98bf3eb0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6cb226c56c841ae77b7b50eb5085fcf6 = $(`<div id="html_6cb226c56c841ae77b7b50eb5085fcf6" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> SEMAMPIR<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 120.52 ton</div>`)[0];
+                popup_4bc46db0b60412cb745c5a4f98bf3eb0.setContent(html_6cb226c56c841ae77b7b50eb5085fcf6);
+            
+        
+
+        circle_marker_d70eb9d5908b0c29f7fb3cc84c41da96.bindPopup(popup_4bc46db0b60412cb745c5a4f98bf3eb0)
+        ;
+
+        
+    
+    
+            circle_marker_d70eb9d5908b0c29f7fb3cc84c41da96.bindTooltip(
+                `<div>
+                     <b>SEMAMPIR</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 120.52 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa03b1246ac7554ca2ede9316c9b9361 = L.circleMarker(
+                [-7.239688620471408, 112.75345981897071],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_662009978c01203b420336bdd558fe3a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02a1e31a1b070fec5044c858d51a3995 = $(`<div id="html_02a1e31a1b070fec5044c858d51a3995" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> SIMOKERTO<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 1926.165 ton</div>`)[0];
+                popup_662009978c01203b420336bdd558fe3a.setContent(html_02a1e31a1b070fec5044c858d51a3995);
+            
+        
+
+        circle_marker_fa03b1246ac7554ca2ede9316c9b9361.bindPopup(popup_662009978c01203b420336bdd558fe3a)
+        ;
+
+        
+    
+    
+            circle_marker_fa03b1246ac7554ca2ede9316c9b9361.bindTooltip(
+                `<div>
+                     <b>SIMOKERTO</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 1926.165 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bbce8cb743ab57e37c09d46e7509722c = L.circleMarker(
+                [-7.268616522578217, 112.6997003413252],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_f12e6f144b47ddf5328b050c82b99e87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cad5bc068a35264e8c70c3c5ab7fc7db = $(`<div id="html_cad5bc068a35264e8c70c3c5ab7fc7db" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> SUKOMANUNGGAL<br><b>Distributor:</b> SUMBER INTI ALAM, PT<br><b>Volume:</b> 140.575 ton</div>`)[0];
+                popup_f12e6f144b47ddf5328b050c82b99e87.setContent(html_cad5bc068a35264e8c70c3c5ab7fc7db);
+            
+        
+
+        circle_marker_bbce8cb743ab57e37c09d46e7509722c.bindPopup(popup_f12e6f144b47ddf5328b050c82b99e87)
+        ;
+
+        
+    
+    
+            circle_marker_bbce8cb743ab57e37c09d46e7509722c.bindTooltip(
+                `<div>
+                     <b>SUKOMANUNGGAL</b><br>Distributor: SUMBER INTI ALAM, PT<br>Volume: 140.575 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ceddd9ed418aafda55e0d8fc907fe1e = L.circleMarker(
+                [-7.292679690588746, 112.80565085800092],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_974d6ac7cf606f5c6214750503d82661 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63f05f0c9c29acc226b057f5346d92f5 = $(`<div id="html_63f05f0c9c29acc226b057f5346d92f5" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> SUKOLILO<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 98.135 ton</div>`)[0];
+                popup_974d6ac7cf606f5c6214750503d82661.setContent(html_63f05f0c9c29acc226b057f5346d92f5);
+            
+        
+
+        circle_marker_3ceddd9ed418aafda55e0d8fc907fe1e.bindPopup(popup_974d6ac7cf606f5c6214750503d82661)
+        ;
+
+        
+    
+    
+            circle_marker_3ceddd9ed418aafda55e0d8fc907fe1e.bindTooltip(
+                `<div>
+                     <b>SUKOLILO</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 98.135 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c85006123c643c6af2ff32836b55883 = L.circleMarker(
+                [-7.250864629687954, 112.76800228848059],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_cd31dda6e8a13eb86b6bce39b09fc78a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a134575fabc6fe34cea949cfde8ba8f = $(`<div id="html_8a134575fabc6fe34cea949cfde8ba8f" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> TAMBAKSARI<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 381.94 ton</div>`)[0];
+                popup_cd31dda6e8a13eb86b6bce39b09fc78a.setContent(html_8a134575fabc6fe34cea949cfde8ba8f);
+            
+        
+
+        circle_marker_6c85006123c643c6af2ff32836b55883.bindPopup(popup_cd31dda6e8a13eb86b6bce39b09fc78a)
+        ;
+
+        
+    
+    
+            circle_marker_6c85006123c643c6af2ff32836b55883.bindTooltip(
+                `<div>
+                     <b>TAMBAKSARI</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 381.94 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b161b2a8d40ffaf270552d424893610 = L.circleMarker(
+                [-7.255581001594608, 112.67125895043823],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_28bb42a51f1634031d219e11f07cec09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ddc7703d1b3407acd48a103c5ac1b85b = $(`<div id="html_ddc7703d1b3407acd48a103c5ac1b85b" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> TANDES<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 310.375 ton</div>`)[0];
+                popup_28bb42a51f1634031d219e11f07cec09.setContent(html_ddc7703d1b3407acd48a103c5ac1b85b);
+            
+        
+
+        circle_marker_9b161b2a8d40ffaf270552d424893610.bindPopup(popup_28bb42a51f1634031d219e11f07cec09)
+        ;
+
+        
+    
+    
+            circle_marker_9b161b2a8d40ffaf270552d424893610.bindTooltip(
+                `<div>
+                     <b>TANDES</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 310.375 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6139609490319aa0bd1961a9fee58052 = L.circleMarker(
+                [-7.2758284306394145, 112.73666324202809],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_d1be724587e546b4f304901de754807c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4f41e5da906620fd9031e70b45806a4 = $(`<div id="html_a4f41e5da906620fd9031e70b45806a4" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> TEGALSARI<br><b>Distributor:</b> BERHASIL INDONESIA GEMILANG, PT<br><b>Volume:</b> 1542.185 ton</div>`)[0];
+                popup_d1be724587e546b4f304901de754807c.setContent(html_a4f41e5da906620fd9031e70b45806a4);
+            
+        
+
+        circle_marker_6139609490319aa0bd1961a9fee58052.bindPopup(popup_d1be724587e546b4f304901de754807c)
+        ;
+
+        
+    
+    
+            circle_marker_6139609490319aa0bd1961a9fee58052.bindTooltip(
+                `<div>
+                     <b>TEGALSARI</b><br>Distributor: BERHASIL INDONESIA GEMILANG, PT<br>Volume: 1542.185 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d28dad6beeb3a76dd1d3ba5480b79c3d = L.circleMarker(
+                [-7.324417600109367, 112.75418443607865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_d5592f2b2fe4e44ccaa5cf14355753e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11847d6d0eb9290fedccc9189d3386dd = $(`<div id="html_11847d6d0eb9290fedccc9189d3386dd" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> TENGGILISMEJOYO<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 35.575 ton</div>`)[0];
+                popup_d5592f2b2fe4e44ccaa5cf14355753e9.setContent(html_11847d6d0eb9290fedccc9189d3386dd);
+            
+        
+
+        circle_marker_d28dad6beeb3a76dd1d3ba5480b79c3d.bindPopup(popup_d5592f2b2fe4e44ccaa5cf14355753e9)
+        ;
+
+        
+    
+    
+            circle_marker_d28dad6beeb3a76dd1d3ba5480b79c3d.bindTooltip(
+                `<div>
+                     <b>TENGGILISMEJOYO</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 35.575 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6b1116ba0d762263d09bf60bfdfbce4 = L.circleMarker(
+                [-7.312629856359907, 112.68818582821108],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_8afe221fb23ee03fae643a75be9c17c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_362500e38e5e607b35ad9074e07f0feb = $(`<div id="html_362500e38e5e607b35ad9074e07f0feb" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> WIYUNG<br><b>Distributor:</b> SEMEN INDONESIA DISTRIBUTOR (JATIM), PT<br><b>Volume:</b> 96.225 ton</div>`)[0];
+                popup_8afe221fb23ee03fae643a75be9c17c5.setContent(html_362500e38e5e607b35ad9074e07f0feb);
+            
+        
+
+        circle_marker_c6b1116ba0d762263d09bf60bfdfbce4.bindPopup(popup_8afe221fb23ee03fae643a75be9c17c5)
+        ;
+
+        
+    
+    
+            circle_marker_c6b1116ba0d762263d09bf60bfdfbce4.bindTooltip(
+                `<div>
+                     <b>WIYUNG</b><br>Distributor: SEMEN INDONESIA DISTRIBUTOR (JATIM), PT<br>Volume: 96.225 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dec3cd94c665c3ee918e9a52e55487df = L.circleMarker(
+                [-7.322040376166424, 112.74181057279597],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_adab3d81c85c47ea3bc4668c45c9a1a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ede2ba6f6012757701fadb12a15c5043 = $(`<div id="html_ede2ba6f6012757701fadb12a15c5043" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> WONOCOLO<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 4.12 ton</div>`)[0];
+                popup_adab3d81c85c47ea3bc4668c45c9a1a3.setContent(html_ede2ba6f6012757701fadb12a15c5043);
+            
+        
+
+        circle_marker_dec3cd94c665c3ee918e9a52e55487df.bindPopup(popup_adab3d81c85c47ea3bc4668c45c9a1a3)
+        ;
+
+        
+    
+    
+            circle_marker_dec3cd94c665c3ee918e9a52e55487df.bindTooltip(
+                `<div>
+                     <b>WONOCOLO</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 4.12 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_619bda1066444d410e6e339f0c564f80 = L.circleMarker(
+                [-7.297730577019125, 112.73793587395087],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 1}
+            ).addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+        var popup_0b36492f040fd78b40b64b2fa2c6eb35 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e87db330af6278b8d46e067cc01095af = $(`<div id="html_e87db330af6278b8d46e067cc01095af" style="width: 100.0%; height: 100.0%;"><b>Kecamatan:</b> WONOKROMO<br><b>Distributor:</b> BUMI PEMBANGUNAN PERTIWI, PT<br><b>Volume:</b> 213.715 ton</div>`)[0];
+                popup_0b36492f040fd78b40b64b2fa2c6eb35.setContent(html_e87db330af6278b8d46e067cc01095af);
+            
+        
+
+        circle_marker_619bda1066444d410e6e339f0c564f80.bindPopup(popup_0b36492f040fd78b40b64b2fa2c6eb35)
+        ;
+
+        
+    
+    
+            circle_marker_619bda1066444d410e6e339f0c564f80.bindTooltip(
+                `<div>
+                     <b>WONOKROMO</b><br>Distributor: BUMI PEMBANGUNAN PERTIWI, PT<br>Volume: 213.715 ton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            tile_layer_53dd74e816f9ae155ee4128e0d21e4aa.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_ff33fe30af858f3640f94b66ff5bd308.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_4a046c17ee4338ff5cbfbf6b1aa3b2f4.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_e97eb8cc5636602f96ad7b75cd57bdcb.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_d0f605a2daf262e89cf2b77f7d9833a7.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_4b05e81bb350d65b89a7b375790be744.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_10fca50a232b7e0653078b7b284b0f3f.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_8879aa929fa26f3539217144dad1f20c.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_b0462e8d44c449c1a37106fb1f07ce04.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_f9815648e3b7a4163a083b030a7d49fc.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_3957e50e6d0e19d88110259afee3a117.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_ce9dcc13e3a6b1dc75f4f81c96d14321.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_fa5522a856cf33cc4fccad07e454e1c0.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_9b6bfa3feb1d2e456bd73fb2dce76fe3.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_5d92bc31724d62f716d9be8e01bc62d2.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_afdc23cca68f0e8721179eaeb5480862.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_76cbe0813c196e229eef78401dd012a7.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_7f8e323b97de06b2be09ae41c725e965.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_287e88989e224e44d45480b00c681501.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_34e8b7480aeecf0bf41f82b40e01b93e.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_d30c5cdf84ab5e99a6e175c5dba3e49c.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_ec9a42af122ec00d02ecc7b56610455c.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_9a6c5e484ace27f5775b82dd174d3159.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_a0c9a49049687a91ac7fecf7065e7620.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_7f62124d4ca7c1af05dc0ec8fb998459.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_28f1853505c7263e23fb67300f28f2f3.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_b5a2b063836d21c7ee79125a5e048bbd.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_87813371f7db8c91b4f73f9a6cb61937.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_948d2d986068dc432adce57d40fb76b9.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_a3436429160e1ba6afef7f133e855b53.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_ea3b2b641d5a72c3651abda3fb553102.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+            geo_json_38d7c7d667324ec785713830efb0943f.addTo(map_4d4e222ffb9a192d131d4d2b394db3e8);
+        
+    
+                marker_717f72c057480f9958dfcc94ccbc422c.setIcon(icon_4dc51f0a9737d470f408840199f74011);
+            
+    
+                marker_0448e7f1645a6f78177101912d2f82ab.setIcon(icon_4e8f2b3bdffdd840ce3d486cc74cd4a8);
+            
+    
+                marker_d03b37d3c6ec25255e07e2dc85bf77e6.setIcon(icon_a0fb87a81069fdab12fc7a8fb736f9e6);
+            
+    
+                marker_f58aedaafd3d85c835d4274bf83513ef.setIcon(icon_e59c3fdecb494465f80b2e6947856c4e);
+            
+    
+                marker_7c69de6dcf0efa1c2762a01ff496fad3.setIcon(icon_23855686427a5122ba23e6f2a13d680a);
+            
+</script>
+</html>
